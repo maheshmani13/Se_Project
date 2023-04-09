@@ -7,7 +7,7 @@ import Image from "next/image";
 export const Main_topic_body = () => {
   const [topics, settopics] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/api/topic")
+    fetch("/api/topic")
       .then((response) => response.json())
       .then((response) => {
         settopics(response);
@@ -28,7 +28,7 @@ export const Main_topic_body = () => {
                 />
               </div>
               <div className="p-5">
-                <a href="#">
+                <a href={`/topic_wise_pages/${topicitem.topic}`}>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {topicitem.topic}
                   </h5>
