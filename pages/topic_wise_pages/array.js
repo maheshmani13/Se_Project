@@ -15,7 +15,10 @@ const Array = () => {
         <div class="-my-8 divide-y-2 divide-gray-100">
           {ques.map((question) => {
             return (
-              <div class="py-8 flex flex-wrap md:flex-nowrap">
+              <div
+                key={question.Problem}
+                class="py-8 flex flex-wrap md:flex-nowrap"
+              >
                 <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                   <span class="font-semibold title-font text-gray-700">
                     Difficulty

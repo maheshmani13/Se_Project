@@ -18,7 +18,7 @@ export const Main_topic_body = () => {
     <div className="flex flex-wrap">
       {topics.map((topicitem) => {
         return (
-          <div className="m-10">
+          <div key={topicitem.topic} className="m-10">
             <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <div className="h-32 w-64">
                 <img
