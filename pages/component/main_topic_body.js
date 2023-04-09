@@ -20,9 +20,13 @@ export const Main_topic_body = () => {
         return (
           <div className="m-10">
             <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-              <a href="#">
-                <Image src="" width={100} height={100} alt={topicitem.topic} />
-              </a>
+              <div className="h-32 w-64">
+                <img
+                  className="rounded-t-lg object-fit h-32 w-64"
+                  src={`/topic_pic/${topicitem.topic}.png`}
+                  alt={topicitem.topic}
+                />
+              </div>
               <div className="p-5">
                 <a href="#">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
