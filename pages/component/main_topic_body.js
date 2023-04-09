@@ -7,7 +7,7 @@ import Link from "next/link";
 const Main_topic_body = () => {
   const [topics, settopics] = useState([]);
   useEffect(() => {
-    fetch("/api/topic")
+    fetch("https://se-project-gules.vercel.app/api/topic")
       .then((response) => response.json())
       .then((response) => {
         settopics(response);

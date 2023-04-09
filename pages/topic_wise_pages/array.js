@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const Array = () => {
   const [ques, setques] = useState([]);
   useEffect(() => {
-    fetch("/api/array")
+    fetch("https://se-project-gules.vercel.app/api/array")
       .then((response) => response.json())
       .then((response) => setques(response));
   }, []);
