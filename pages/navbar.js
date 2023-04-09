@@ -6,18 +6,18 @@ const Navbar = () => {
   const flex = "";
   return (
     <div className="shadow-sm h-20 text-red-200 bg-purple-200 flex justify-between items-center">
-      <a href="/">
+      <Link href="#">
         <div className="ml-5">
           <img src="/logo.png" width={150} />
         </div>
-      </a>
+      </Link>
       <div className="flex gap-10 ">
-        <a href={`/`}>
+        <Link href="#">
           <p className="font-semibold text-xl text-red-400 ">Home</p>
-        </a>
-        <a>
+        </Link>
+        <Link href="#">
           <p className="font-semibold text-xl text-red-400 ">Contact</p>
-        </a>
+        </Link>
         <p className="font-semibold text-xl text-red-400 ">Questions</p>
         <p className="font-semibold text-xl text-red-400 ">Xyz</p>
       </div>
