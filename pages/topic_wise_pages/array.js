@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 
-const Array = () => {
-  const [ques, setques] = useState([]);
-  useEffect(() => {
-    fetch("https://se-project-gules.vercel.app/api/array")
-      .then((response) => response.json())
-      .then((response) => setques(response));
-  }, []);
+export async function getStaticProps() {
+  const res = await fetch("https://dsa-v3sn.onrender.com/Array");
+  const ques = await res.json();
+  return {
+    props: {
+      ques,
+    },
+    revalidate: 30,
+  };
+}
+
+const Array = ({ ques }) => {
+  // const [ques, setques] = useState([]);
+  // useEffect(() => {
+  //   get("http://dsa-v3sn.onrender.com/Array")
+  //     .then((response) => response.json())
+  //     .then((response) => setques(response));
+  // }, []);
 
   return (
     <>
