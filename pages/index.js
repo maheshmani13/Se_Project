@@ -7,19 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="flex flex-wrap">
-      <Main_topic_body
-        topicitem={{ topic: "array", no_of_questions: "98" }}
-      ></Main_topic_body>
-      <Main_topic_body
-        topicitem={{ topic: "string", no_of_questions: "98" }}
-      ></Main_topic_body>
-      <Main_topic_body
-        topicitem={{ topic: "dp", no_of_questions: "98" }}
-      ></Main_topic_body>
-      <Main_topic_body
-        topicitem={{ topic: "graph", no_of_questions: "98" }}
-      ></Main_topic_body>
-    </div>
+    <>
+      <Main_topic_body></Main_topic_body>
+    </>
   );
 }
