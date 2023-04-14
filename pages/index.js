@@ -1,14 +1,27 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Navbar from "./navbar";
-import Main_topic_body from "./component/main_topic_body";
+import Card from "./card";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export async function getServerProps() {
+  const res = await fetch("https://dsa-v3sn.onrender.com/topic");
+  const articles = await res.json();
+  console.log(articles);
+
+  return {
+    props: {
+      articles,
+    },
+    revalidate: 30,
+  };
+}
+
+export default function Home({ articles }) {
   return (
     <>
-      <Main_topic_body></Main_topic_body>
+      <Card art={articles}></Card>
     </>
   );
 }

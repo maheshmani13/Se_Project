@@ -44,7 +44,7 @@ const Array = ({ ques }) => {
                   </h2>
                   <p class="leading-relaxed">{question.Topic}</p>
                   <a
-                    href={`${question.URL}`}
+                    href={`/${question.Problem}`}
                     class="text-indigo-500 inline-flex items-center mt-4"
                   >
                     Solve it Now!
