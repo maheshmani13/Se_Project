@@ -5,7 +5,7 @@ import Card from "./card";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch("https://dsa-v3sn.onrender.com/topic");
   const articles = await res.json();
   console.log(articles);
