@@ -26,8 +26,8 @@ export default function Home({ articles }) {
           <Link href={`/${article.topic}`}>
             <img
               className="rounded-t-lg object-scale-down"
-              src={`/topic_pic/graph.png`}
-              alt=""
+              src="/topic_pic/graph.png"
+              alt="pic"
             />
 
             <div className="p-5">
