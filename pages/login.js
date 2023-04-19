@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const Login = () => {
   return (
     <div className=" flex flex-col  justify-start">
@@ -69,12 +69,12 @@ const Login = () => {
 
                 <p className="text-sm font-light text-gray-500 ">
                   Don’t have an account yet?{" "}
-                  <a
+                  <Link
                     href="/signup"
                     className="font-medium text-primary-600 hover:underline "
                   >
                     Sign up
-                  </a>
+                  </Link>
                 </p>
               </form>
             </div>
