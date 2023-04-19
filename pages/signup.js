@@ -4,7 +4,7 @@ const Signup = () => {
   return (
     <div className=" flex flex-col  justify-start">
       <section className="bg-gray-50 h-screen ">
-        <div className="flex flex-col items-center justify-center px-6  mx-auto mt-16 lg:py-0">
+        <div className="flex flex-col items-center justify-center px-6  mx-auto mt-12 lg:py-0">
           <a
             href="#"
             className="flex items-center mb-6 text-2xl font-semibold text-gray-900 "

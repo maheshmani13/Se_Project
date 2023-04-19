@@ -4,9 +4,8 @@ import { useRouter } from "next/router";
 const Post = () => {
   const router = useRouter();
   const { query } = router.query;
-  console.log(query);
 
-  return <p>{query}</p>;
+  return <p></p>;
 };
 
 export default Post;
