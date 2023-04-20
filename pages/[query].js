@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export async function getStaticPaths() {
   return {
@@ -55,13 +56,15 @@ const Post = ({ ques }) => {
               {quess?.map((question) => (
                 <tr key={question.id}>
                   <td className=" px-10 py-5 border-b border-gray-200 bg-white text-sm">
-                    <div className="flex items-center">
-                      <div className="ml-5">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          {question.Problem}
-                        </p>
+                    <Link href={`/ques/${question.Problem}`}>
+                      <div className="flex items-center">
+                        <div className="ml-5">
+                          <p className="text-gray-900 whitespace-no-wrap">
+                            {question.Problem}
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     <p className="text-gray-900 whitespace-no-wrap">

@@ -39,13 +39,15 @@ export default function Home({ articles }) {
                 Problems : {article.numberOfQuestions}
               </p>
               <div className="flex justify-end">
-                <button
-                  type="button"
-                  class="inline-block bg-red-300 rounded-full border-2 border-primary-100 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:border-primary-accent-100 hover:bg-neutral-500 hover:bg-opacity-10 focus:border-primary-accent-100 focus:outline-none focus:ring-0 active:border-primary-accent-200 "
-                  data-te-ripple-init
-                >
-                  View
-                </button>
+                <Link href={`/${article.topic}`}>
+                  <button
+                    type="button"
+                    class="inline-block bg-red-300 rounded-full border-2 border-primary-100 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:border-primary-accent-100 hover:bg-neutral-500 hover:bg-opacity-10 focus:border-primary-accent-100 focus:outline-none focus:ring-0 active:border-primary-accent-200 "
+                    data-te-ripple-init
+                  >
+                    View
+                  </button>
+                </Link>
               </div>
             </div>
           </Link>
