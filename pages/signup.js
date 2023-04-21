@@ -1,7 +1,41 @@
 import Link from "next/link";
 import React from "react";
+import firebase, { app } from "../firebase";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { useState } from "react";
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 const Signup = () => {
+  const auth = getAuth(app);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try {
+      // Create a new user account with email and password
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      // Save the user's name and email to the Firestore database
+      const docRef = await addDoc(collection(db, "users"), {
+        email: email,
+        password: password,
+        name: name,
+      });
+
+      console.log("Signup successful:", userCredential);
+      // Do something with the user object or redirect to another page
+    } catch (error) {
+      console.error("Signup error:", error);
+    }
+  };
+
   return (
     <div className=" flex flex-col  justify-start">
       <section className="bg-gray-50 h-screen ">
@@ -31,7 +65,8 @@ const Signup = () => {
                     id="name"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2"
                     placeholder="Steve Doe"
-                    required=""
+                    required={true}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div>
@@ -47,7 +82,8 @@ const Signup = () => {
                     id="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2"
                     placeholder="name@company.com"
-                    required="true"
+                    onChange={(e) => setEmail(e.target.value)}
+                    required={true}
                   />
                 </div>
 
@@ -64,23 +100,8 @@ const Signup = () => {
                     id="password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                    required="true"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="block mb-2 text-sm font-medium text-gray-900"
-                  >
-                    Confirm Password
-                  </label>
-                  <input
-                    type="password"
-                    name="cpassword"
-                    id="cpassword"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                    required="true"
+                    required={true}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
 
@@ -89,6 +110,7 @@ const Signup = () => {
                     type="button"
                     className="inline-block bg-red-300 rounded-full   px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:border-primary-accent-100 hover:bg-neutral-500 hover:bg-opacity-10 focus:border-primary-accent-100  focus:ring-0 active:border-primary-accent-200 "
                     data-te-ripple-init
+                    onClick={handleSignup}
                   >
                     Sign Up
                   </button>

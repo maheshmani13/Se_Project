@@ -27,7 +27,7 @@ const Question = ({ ques1 }) => {
   //   console.log(ques1);
   console.log(ques);
 
-  ques1 = ques1?.filter((q) => q.Problem == ques);
+  ques1 = ques1?.filter((q) => q.Problem.trim() == ques);
   console.log(ques1);
 
   return (

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
+import firebase from "../firebase";
 import { app } from "../firebase";
 import Link from "next/link";
 
@@ -19,12 +20,15 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      console.log("successful signin");
+      localStorage.setItem("user", JSON.stringify(auth.currentUser));
+
       setlogged_in(true);
+      window.localStorage.setItem("isLoggedIn", true);
     } catch (error) {
       console.error("Error signing in: ", error);
     }
@@ -60,7 +64,7 @@ const Login = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2"
                     placeholder="name@company.com"
                     onChange={(e) => setEmail(e.target.value)}
-                    required
+                    required={true}
                   />
                 </div>
                 <div>
@@ -77,7 +81,7 @@ const Login = () => {
                     id="password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                    required
+                    required={true}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
