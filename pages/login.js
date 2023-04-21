@@ -6,23 +6,25 @@ import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app } from "../firebase";
 import Link from "next/link";
 
-let auth = getAuth();
-let user = {};
+let auth = getAuth(app);
 
 const Login = () => {
+  const [logged_in, setlogged_in] = useState(false);
   const router = useRouter();
   useEffect(() => {
-    if (user !== {}) {
+    if (logged_in) {
       router.push("/");
     }
-  }, [user]);
+  }, [logged_in]);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      user = await signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log("successful signin");
+      setlogged_in(true);
     } catch (error) {
       console.error("Error signing in: ", error);
     }

@@ -19,6 +19,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ articles }) {
+  console.log(auth.currentUser);
   return (
     <div className="flex flex-wrap justify-around gap-10 p-10">
       {articles?.map((article) => (
