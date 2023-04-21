@@ -24,7 +24,10 @@ export async function getStaticProps() {
 const Question = ({ ques1 }) => {
   const router = useRouter();
   const { ques } = router.query;
-  ques1 = ques1?.filter((q) => q.Problem === ques);
+  //   console.log(ques1);
+  console.log(ques);
+
+  ques1 = ques1?.filter((q) => q.Problem == ques);
   console.log(ques1);
 
   return (
@@ -49,8 +52,8 @@ const Question = ({ ques1 }) => {
                 <p className="capitalize text-2xl font-extrabold text-black">
                   {q.Problem}
                 </p>
-                <h2 className="text-3xl">{q.Topic}</h2>
-                <h5 className="">Difficulty : {q.Difficulty}</h5>
+                <p className="text-3xl">{q.Topic}</p>
+                <p className="">Difficulty : {q.Difficulty}</p>
                 <p className="text-lg text-gray-500	">{q.Description}</p>
                 <div className="flex items-center gap-4 my-6 cursor-pointer ">
                   <Link href={q.URL}>
