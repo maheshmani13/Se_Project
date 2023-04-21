@@ -5,8 +5,10 @@ import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useState } from "react";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
+import { useRouter } from "next/router";
 
 const Signup = () => {
+  const router = useRouter();
   const auth = getAuth(app);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,6 +32,7 @@ const Signup = () => {
       });
 
       console.log("Signup successful:", userCredential);
+      router.push("/");
       // Do something with the user object or redirect to another page
     } catch (error) {
       console.error("Signup error:", error);
