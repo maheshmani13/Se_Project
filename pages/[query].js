@@ -1,6 +1,20 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { app } from "../firebase";
+import { getAuth } from "firebase/auth";
+import firebase from "@/firebase";
+import { db } from "../firebase";
+import { useEffect, useState } from "react";
+import {
+  doc,
+  collection,
+  addDoc,
+  setDoc,
+  getDoc,
+  updateDoc,
+} from "firebase/firestore";
+import _, { get, map, result } from "underscore";
 
 export async function getStaticPaths() {
   return {
@@ -22,13 +36,57 @@ export async function getStaticProps() {
 }
 
 const Post = ({ ques }) => {
-  let quess = [];
   const router = useRouter();
+  const auth = getAuth(app);
+  const [array1, setarray] = useState(["fy"]);
+  useEffect(() => {
+    if (auth.currentUser) {
+      const docRef = doc(db, "users", auth.currentUser.uid);
+      getDoc(docRef)
+        .then((doc) => doc.data())
+        .then(function (result) {
+          return result.solvedQuestion;
+        })
+        .then((array) => setarray(array));
+    }
+  }, [auth.currentUser]);
+
+  const addSolvedQuestion = async (questionId) => {
+    const currentUser = auth.currentUser;
+
+    // Check if user is logged in
+    if (!currentUser) {
+      throw new Error("User must be logged in to add solved question");
+    }
+
+    console.log(auth.currentUser.uid);
+    const docRef = doc(db, "users", auth.currentUser.uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      // docSnap.data() will be undefined in this case
+      console.log("No such document!");
+    }
+    const data = docSnap.data();
+    const oldarray = data.solvedQuestion;
+    console.log("oldarray" + oldarray);
+    const newarray = _.union(oldarray, [questionId]);
+    console.log(newarray);
+    await updateDoc(docRef, {
+      solvedQuestion: newarray,
+    });
+
+    setarray(_.union(array1, [questionId]));
+  };
+
+  let quess = [];
+
   const { query } = router.query;
   quess = ques?.filter((q) => {
     return q.Topic == query;
   });
-  console.log(quess);
 
   return (
     <div className="mx-12">
@@ -83,7 +141,19 @@ const Post = ({ ques }) => {
                         aria-hidden
                         className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
                       ></span>
-                      <span className="relative">Done</span>
+
+                      <span className="relative ">
+                        {array1.includes(question.id) ? (
+                          <button className="">Done</button>
+                        ) : (
+                          <button
+                            className="bg-red-200"
+                            onClick={() => addSolvedQuestion(question.id)}
+                          >
+                            Not Done
+                          </button>
+                        )}
+                      </span>
                     </span>
                   </td>
                 </tr>

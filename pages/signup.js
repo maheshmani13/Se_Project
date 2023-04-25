@@ -4,7 +4,7 @@ import firebase, { app } from "../firebase";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useState } from "react";
 import { db } from "../firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, setDoc, doc } from "firebase/firestore";
 import { useRouter } from "next/router";
 
 const Signup = () => {
@@ -25,10 +25,12 @@ const Signup = () => {
       );
 
       // Save the user's name and email to the Firestore database
-      const docRef = await addDoc(collection(db, "users"), {
+      const docRef = doc(db, "users", auth.currentUser.uid);
+      setDoc(docRef, {
         email: email,
         password: password,
         name: name,
+        solvedQuestion: [],
       });
 
       console.log("Signup successful:", userCredential);
