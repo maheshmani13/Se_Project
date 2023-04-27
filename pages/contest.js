@@ -67,6 +67,26 @@ const Contest = ({ contests }) => {
     });
 
     setarray(_.union(array1, [contest_name]));
+    fetch("https://emailer-xykq.onrender.com/mail", {
+      method: "POST",
+      body: JSON.stringify({
+        to: auth.currentUser.email,
+        subject: "***CONTEST REMINDER***",
+        text: `<h1 style='color: black; border: 5px solid blue; letter-spacing: 5px; padding: 10px;'>${contest_name}</h1>`,
+        delay: 1,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // Handle data
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
   contests = contests?.filter((q) => {
