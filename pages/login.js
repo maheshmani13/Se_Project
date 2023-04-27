@@ -29,7 +29,7 @@ const Login = () => {
       setlogged_in(true);
       window.localStorage.setItem("isLoggedIn", true);
     } catch (error) {
-      console.error("Error signing in: ", error);
+      alert("Error signing in: " + error);
     }
   };
 
