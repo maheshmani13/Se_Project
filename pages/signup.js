@@ -15,6 +15,19 @@ const Signup = () => {
   const [password, setPassword] = useState("");
 
   const handleSignup = async (e) => {
+    if (name === "") {
+      alert("enter valid name");
+      return;
+    }
+    if (email.includes("@") == false) {
+      alert("invalid email");
+      return;
+    }
+    if (password.length < 6) {
+      alert("password must be at least 6 characters");
+      return;
+    }
+
     e.preventDefault();
     try {
       // Create a new user account with email and password
@@ -38,7 +51,9 @@ const Signup = () => {
       router.push("/");
       // Do something with the user object or redirect to another page
     } catch (error) {
-      console.error("Signup error:", error);
+      const err1 = String(error);
+      const err = err1.substring(37, err1.length - 2);
+      alert("Error: " + err);
     }
   };
 

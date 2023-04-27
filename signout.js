@@ -6,8 +6,7 @@ export async function handlesignout() {
 
   try {
     await auth.signOut();
-    window.localStorage.removeItem("isLoggedIn");
   } catch (error) {
-    console.log(error);
+    alert(error);
   }
 }

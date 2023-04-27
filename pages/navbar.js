@@ -12,6 +12,7 @@ const Navbar = () => {
   const signingout = async () => {
     await handlesignout();
     setlogged_in(false);
+
     router.push("/");
   };
 
@@ -39,10 +40,15 @@ const Navbar = () => {
           </p>
         </Link>
         <Link href="/contest">
-          <p className="font-semibold text-xl text-red-400 ">Contests</p>
+          <p className="font-semibold text-xl text-red-400 hover:text-red-800 ">
+            Contests
+          </p>
         </Link>
-        <p className="font-semibold text-xl text-red-400 ">Questions</p>
-        <p className="font-semibold text-xl text-red-400 ">Xyz</p>
+        <Link href={"/about"}>
+          <p className="font-semibold text-xl text-red-400 hover:text-red-800">
+            About
+          </p>
+        </Link>
       </div>
 
       <div className="flex gap-15 p-10 mt-2">
@@ -58,7 +64,7 @@ const Navbar = () => {
             <Link href="/signup">
               <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
                 <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                  SingUp
+                  SignUp
                 </span>
               </button>
             </Link>

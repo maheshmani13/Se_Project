@@ -56,7 +56,8 @@ const Post = ({ ques }) => {
 
     // Check if user is logged in
     if (!currentUser) {
-      throw new Error("User must be logged in to add solved question");
+      alert("User must be logged in to add solved question");
+      return;
     }
 
     console.log(auth.currentUser.uid);
@@ -136,25 +137,33 @@ const Post = ({ ques }) => {
                     </p>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                      <span
-                        aria-hidden
-                        className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-                      ></span>
+                    {array1.includes(question.id) ? (
+                      <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                        <span
+                          aria-hidden
+                          className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+                        ></span>
 
-                      <span className="relative ">
-                        {array1.includes(question.id) ? (
-                          <button className="">Done</button>
-                        ) : (
+                        <span className="relative ">
+                          <button>Done</button>
+                        </span>
+                      </span>
+                    ) : (
+                      <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                        <span
+                          aria-hidden
+                          className="absolute inset-0 bg-red-200 opacity-50 rounded-full"
+                        ></span>
+
+                        <span className="relative ">
                           <button
-                            className="bg-red-200"
                             onClick={() => addSolvedQuestion(question.id)}
                           >
                             Not Done
                           </button>
-                        )}
+                        </span>
                       </span>
-                    </span>
+                    )}
                   </td>
                 </tr>
               ))}
