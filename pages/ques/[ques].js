@@ -56,7 +56,7 @@ const Question = ({ ques1 }) => {
                 <p className="">Difficulty : {q.Difficulty}</p>
                 <p className="text-lg text-gray-500	">{q.Description}</p>
                 <div className="flex items-center gap-4 my-6 cursor-pointer ">
-                  <Link href={q.URL}>
+                  <a href={q.URL} target="_blank">
                     <button
                       type="button"
                       className="inline-block bg-red-300 rounded-full px-6 pb-[6px] pt-2 text-sm font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:border-primary-accent-100 hover:bg-neutral-500 hover:bg-opacity-10 focus:border-primary-accent-100  focus:ring-0 active:border-primary-accent-200 "
@@ -64,7 +64,7 @@ const Question = ({ ques1 }) => {
                     >
                       Go to Question
                     </button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

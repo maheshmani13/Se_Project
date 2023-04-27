@@ -38,8 +38,8 @@ const Navbar = () => {
             Home
           </p>
         </Link>
-        <Link href="#">
-          <p className="font-semibold text-xl text-red-400 ">Contact</p>
+        <Link href="/contest">
+          <p className="font-semibold text-xl text-red-400 ">Contests</p>
         </Link>
         <p className="font-semibold text-xl text-red-400 ">Questions</p>
         <p className="font-semibold text-xl text-red-400 ">Xyz</p>
