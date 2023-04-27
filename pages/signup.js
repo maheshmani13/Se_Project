@@ -31,6 +31,7 @@ const Signup = () => {
         password: password,
         name: name,
         solvedQuestion: [],
+        contest_reminder: [],
       });
 
       console.log("Signup successful:", userCredential);
