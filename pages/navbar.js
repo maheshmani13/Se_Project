@@ -49,6 +49,15 @@ const Navbar = () => {
             About
           </p>
         </Link>
+        {logged_in ? (
+          <Link href={"/progress"}>
+            <p className="font-semibold text-xl text-red-400 hover:text-red-800">
+              Progress
+            </p>
+          </Link>
+        ) : (
+          <></>
+        )}
       </div>
 
       <div className="flex gap-15 p-10 mt-2">

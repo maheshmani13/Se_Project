@@ -31,7 +31,7 @@ export async function getStaticProps() {
     props: {
       ques,
     },
-    revalidate: 30,
+    revalidate: 15,
   };
 }
 

@@ -10,7 +10,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://dsa-v3sn.onrender.com/");
+  const res = await fetch("https://questions-ih30.onrender.com/");
   const ques1 = await res.json();
 
   return {
@@ -37,14 +37,17 @@ const Question = ({ ques1 }) => {
           key={q.id}
           className="flex mt-20 items-center p-10 w-full h-full bg-white"
         >
-          <div className="border-t border-b pt-16 grid grid-cols-2 gap-8">
-            <div className="flex flex-col justify-start">
-              <div className="flex flex-col w-full object-cover h-4/6 justify-items-start border rounded-lg overflow-hidden">
-                <img
-                  className="w-full h-full object-cover"
-                  src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                  alt="nike shoes"
-                />
+          <div className="border-t border-b py-10 grid grid-cols-2 gap-8">
+            <div className="flex flex-col h-full justify-start py-5">
+              <div className="flex flex-col w-full h-full object-cover justify-items-start border rounded-lg overflow-hidden">
+                <iframe
+                  className="h-full"
+                  src={q.Link}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
             <div className="flex flex-col">
