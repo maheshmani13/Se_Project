@@ -50,7 +50,7 @@ const Navbar = () => {
           </p>
         </Link>
         {logged_in ? (
-          <Link href={"/progress"}>
+          <Link href={`/progress/${auth.currentUser.uid}`}>
             <p className="font-semibold text-xl text-red-400 hover:text-red-800">
               Progress
             </p>
