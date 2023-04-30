@@ -51,6 +51,38 @@ const Post = ({ ques }) => {
     }
   }, [auth.currentUser]);
 
+  const removeQuestion = async (questionId) => {
+    console.log("infunc");
+    const currentUser = auth.currentUser;
+
+    // Check if user is logged in
+    if (!currentUser) {
+      alert("User must be logged in to add solved question");
+      return;
+    }
+
+    console.log(auth.currentUser.uid);
+    const docRef = doc(db, "users", auth.currentUser.uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      // docSnap.data() will be undefined in this case
+      console.log("No such document!");
+    }
+    const data = docSnap.data();
+    const oldarray = data.solvedQuestion;
+    console.log("oldarray" + oldarray);
+    const newarray = _.difference(oldarray, [questionId]);
+    console.log(newarray);
+    await updateDoc(docRef, {
+      solvedQuestion: newarray,
+    });
+
+    setarray(newarray);
+  };
+
   const addSolvedQuestion = async (questionId) => {
     const currentUser = auth.currentUser;
 
@@ -145,7 +177,9 @@ const Post = ({ ques }) => {
                         ></span>
 
                         <span className="relative ">
-                          <button>Done</button>
+                          <button onClick={() => removeQuestion(question.id)}>
+                            Done
+                          </button>
                         </span>
                       </span>
                     ) : (
