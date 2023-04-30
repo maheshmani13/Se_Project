@@ -5,7 +5,7 @@ import { app } from "../firebase";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-const fp = () => {
+const Fp = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
 
@@ -87,4 +87,4 @@ const fp = () => {
   );
 };
 
-export default fp;
+export default Fp;
