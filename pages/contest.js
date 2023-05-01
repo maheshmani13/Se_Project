@@ -46,7 +46,8 @@ const Contest = ({ contests }) => {
 
   const handleReminder = async (contest_name) => {
     if (!currentUser) {
-      throw new Error("User must be logged in to add solved question");
+      alert("User must be logged in to add solved question");
+      return;
     }
     console.log(auth.currentUser.uid);
     const docRef = doc(db, "users", auth.currentUser.uid);

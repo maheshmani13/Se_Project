@@ -9,7 +9,6 @@ const auth = getAuth(app);
 export async function getStaticProps() {
   const res = await fetch("https://dsa-v3sn.onrender.com/topic");
   const articles = await res.json();
-
   return {
     props: {
       articles,
@@ -30,7 +29,7 @@ export default function Home({ articles }) {
           <Link href={`/${article.topic}`}>
             <img
               className="rounded-t-lg object-scale-down"
-              src="/topic_pic/graph.png"
+              src={`/topic_pic/${article.topic}.png`}
               alt="pic"
             />
 
