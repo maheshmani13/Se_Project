@@ -106,12 +106,12 @@ const Contest = ({ contests }) => {
             </p>
 
             <p className="mb-3 font-normal text-gray-700">
-              Start Time: {contest.start_time}
+              Start Date: {contest.start_time.substring(0, 10)}
             </p>
             <p className="mb-3 font-normal text-gray-700">
-              End Time: {contest.end_time}
+              End Date: {contest.end_time.substring(0, 10)}
             </p>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center mt-8 justify-between">
               <a href={contest.url} target="_blank">
                 <div className="flex justify-start">
                   <button
