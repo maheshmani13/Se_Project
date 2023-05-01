@@ -165,7 +165,7 @@ const Progress = ({
                       {easy1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Easy</h5>
-                    <p className="text-gray-500  text-xl">Total : </p>
+                    <p className="text-gray-500  text-xl">Total : 150 </p>
                   </div>
 
                   <div className="mb-12 md:mb-0 py-7 px-7">
@@ -173,7 +173,7 @@ const Progress = ({
                       {medium1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Medium</h5>
-                    <p className="text-gray-500 text-xl">Total : </p>
+                    <p className="text-gray-500 text-xl">Total : 200 </p>
                   </div>
 
                   <div className="mb-12 md:mb-0 py-7 px-7">
@@ -181,7 +181,7 @@ const Progress = ({
                       {hard1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Hard</h5>
-                    <p className="text-gray-500  text-xl">Total : </p>
+                    <p className="text-gray-500  text-xl">Total : 100 </p>
                   </div>
                 </div>
               </div>
