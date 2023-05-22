@@ -14,7 +14,7 @@ import {
 import { db } from "../firebase";
 import _, { get, map, result } from "underscore";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch("https://kontests.net/api/v1/all");
   const contests = await res.json();
   console.log(contests);
@@ -23,7 +23,6 @@ export async function getStaticProps() {
     props: {
       contests,
     },
-    revalidate: 30,
   };
 }
 
