@@ -100,18 +100,18 @@ const Contest = ({ contests }) => {
           className="w-72 mt-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-orange-100 dark:border-gray-700"
         >
           <div className="p-5">
-            <p className="mb-2 text-2xl font-bold tracking-tight h-20 text-gray-900 ">
+            <div className="mb-2 text-2xl font-bold tracking-tight h-20 text-gray-900 ">
               {contest.name}
-            </p>
+            </div>
 
-            <p className="mb-3 font-normal text-gray-700">
+            <div className="mb-3 font-normal text-gray-700">
               Start Date: {contest.start_time.substring(0, 10)}
-            </p>
-            <p className="mb-3 font-normal text-gray-700">
+            </div>
+            <div className="mb-3 font-normal text-gray-700">
               End Date: {contest.end_time.substring(0, 10)}
-            </p>
+            </div>
             <div className="flex items-center mt-8 justify-between">
-              <a href={contest.url} target="_blank">
+              <Link href={contest.url} target="_blank">
                 <div className="flex justify-start">
                   <button
                     type="button"
@@ -121,7 +121,7 @@ const Contest = ({ contests }) => {
                     View
                   </button>
                 </div>
-              </a>
+              </Link>
               <div className="flex justify-end">
                 {array1?.includes(contest.name) ? (
                   <button

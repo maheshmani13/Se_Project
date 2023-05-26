@@ -3,18 +3,10 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { app } from "../firebase";
 import { getAuth } from "firebase/auth";
-import firebase from "@/firebase";
 import { db } from "../firebase";
 import { useEffect, useState } from "react";
-import {
-  doc,
-  collection,
-  addDoc,
-  setDoc,
-  getDoc,
-  updateDoc,
-} from "firebase/firestore";
-import _, { get, map, result } from "underscore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import _ from "underscore";
 
 export async function getStaticPaths() {
   return {
@@ -150,23 +142,23 @@ const Post = ({ ques }) => {
                     <Link href={`ques/${question.Problem}`}>
                       <div className="flex items-center">
                         <div className="ml-5">
-                          <p className="text-gray-900 whitespace-no-wrap">
+                          <div className="text-gray-900 whitespace-no-wrap">
                             {question.Problem}
-                          </p>
+                          </div>
                         </div>
                       </div>
                     </Link>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-900 whitespace-no-wrap">
+                    <div className="text-gray-900 whitespace-no-wrap">
                       {question.Topic}
-                    </p>
+                    </div>
                   </td>
 
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-900 whitespace-no-wrap ml-6">
+                    <div className="text-gray-900 whitespace-no-wrap ml-6">
                       {question.Difficulty}
-                    </p>
+                    </div>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     {array1.includes(question.id) ? (

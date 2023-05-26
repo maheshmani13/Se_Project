@@ -165,7 +165,7 @@ const Progress = ({
                       {easy1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Easy</h5>
-                    <p className="text-gray-500  text-xl">Total : 150 </p>
+                    <div className="text-gray-500  text-xl">Total : 150 </div>
                   </div>
 
                   <div className="mb-12 md:mb-0 py-7 px-7">
@@ -173,7 +173,7 @@ const Progress = ({
                       {medium1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Medium</h5>
-                    <p className="text-gray-500 text-xl">Total : 200 </p>
+                    <div className="text-gray-500 text-xl">Total : 200 </div>
                   </div>
 
                   <div className="mb-12 md:mb-0 py-7 px-7">
@@ -181,7 +181,7 @@ const Progress = ({
                       {hard1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Hard</h5>
-                    <p className="text-gray-500  text-xl">Total : 100 </p>
+                    <div className="text-gray-500  text-xl">Total : 100 </div>
                   </div>
                 </div>
               </div>
@@ -195,7 +195,7 @@ const Progress = ({
                       {array1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Array</h5>
-                    <p className="text-gray-500  text-xl">Total : 36 </p>
+                    <div className="text-gray-500  text-xl">Total : 36 </div>
                   </div>
 
                   <div className="mb-12 md:mb-0 py-7 px-7">
@@ -203,7 +203,7 @@ const Progress = ({
                       {BackTracking1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">BackTracking</h5>
-                    <p className="text-gray-500 text-xl">Total : 19 </p>
+                    <div className="text-gray-500 text-xl">Total : 19 </div>
                   </div>
 
                   <div className="mb-12 md:mb-0 py-7 px-7">
@@ -213,14 +213,14 @@ const Progress = ({
                     <h5 className="text-2xl font-medium mb-4">
                       Stacks & Queues
                     </h5>
-                    <p className="text-gray-500  text-xl">Total : 41 </p>
+                    <div className="text-gray-500  text-xl">Total : 41 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
                       {BinaryTrees1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Binary Trees</h5>
-                    <p className="text-gray-500  text-xl">Total : 35 </p>
+                    <div className="text-gray-500  text-xl">Total : 35 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
@@ -229,7 +229,7 @@ const Progress = ({
                     <h5 className="text-2xl font-medium mb-4">
                       Bit Manipulation
                     </h5>
-                    <p className="text-gray-500  text-xl">Total : 10 </p>
+                    <div className="text-gray-500  text-xl">Total : 10 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
@@ -238,7 +238,7 @@ const Progress = ({
                     <h5 className="text-2xl font-medium mb-4">
                       Binary Search Trees
                     </h5>
-                    <p className="text-gray-500  text-xl">Total : 22 </p>
+                    <div className="text-gray-500  text-xl">Total : 22 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
@@ -247,42 +247,42 @@ const Progress = ({
                     <h5 className="text-2xl font-medium mb-4">
                       Dynamic Programming
                     </h5>
-                    <p className="text-gray-500  text-xl">Total : 60 </p>
+                    <div className="text-gray-500  text-xl">Total : 60 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
                       {graph1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Graph</h5>
-                    <p className="text-gray-500  text-xl">Total : 44 </p>
+                    <div className="text-gray-500  text-xl">Total : 44 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
                       {greedy1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Greedy</h5>
-                    <p className="text-gray-500  text-xl">Total : 35 </p>
+                    <div className="text-gray-500  text-xl">Total : 35 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
                       {heap1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Heap</h5>
-                    <p className="text-gray-500  text-xl">Total : 18 </p>
+                    <div className="text-gray-500  text-xl">Total : 18 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
                       {ll1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Linked List</h5>
-                    <p className="text-gray-500  text-xl">Total : 34</p>
+                    <div className="text-gray-500  text-xl">Total : 34</div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
                       {m1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Matrix</h5>
-                    <p className="text-gray-500  text-xl">Total : 10 </p>
+                    <div className="text-gray-500  text-xl">Total : 10 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
@@ -291,21 +291,21 @@ const Progress = ({
                     <h5 className="text-2xl font-medium mb-4">
                       Searching & Sorting
                     </h5>
-                    <p className="text-gray-500  text-xl">Total : 36 </p>
+                    <div className="text-gray-500  text-xl">Total : 36 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
                       {s1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">String</h5>
-                    <p className="text-gray-500  text-xl">Total : 42 </p>
+                    <div className="text-gray-500  text-xl">Total : 42 </div>
                   </div>
                   <div className="mb-12 md:mb-0 py-7 px-7">
                     <h2 className="text-3xl font-bold display-5 text-red-300 mb-4">
                       {t1}
                     </h2>
                     <h5 className="text-2xl font-medium mb-4">Trie</h5>
-                    <p className="text-gray-500  text-xl">Total : 6 </p>
+                    <div className="text-gray-500  text-xl">Total : 6 </div>
                   </div>
                 </div>
               </div>

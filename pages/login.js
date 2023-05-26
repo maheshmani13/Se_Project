@@ -46,9 +46,9 @@ const Login = () => {
           </Link>
           <div className="w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <p className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
+              <div className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
                 Sign in to your account
-              </p>
+              </div>
               <form className="space-y-4 md:space-y-6" action="#">
                 <div>
                   <label
@@ -104,7 +104,7 @@ const Login = () => {
                   </button>
                 </div>
 
-                <p className="text-sm font-light text-gray-500 ">
+                <div className="text-sm font-light text-gray-500 ">
                   Don’t have an account yet?{" "}
                   <Link
                     href="/signup"
@@ -112,7 +112,7 @@ const Login = () => {
                   >
                     Sign up
                   </Link>
-                </p>
+                </div>
               </form>
             </div>
           </div>

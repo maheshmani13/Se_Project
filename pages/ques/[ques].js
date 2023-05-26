@@ -52,14 +52,14 @@ const Question = ({ ques1 }) => {
             </div>
             <div className="flex flex-col">
               <div className="flex flex-col gap-4">
-                <p className="capitalize text-2xl font-extrabold text-black">
+                <div className="capitalize text-2xl font-extrabold text-black">
                   {q.Problem}
-                </p>
-                <p className="text-3xl">{q.Topic}</p>
-                <p className="">Difficulty : {q.Difficulty}</p>
-                <p className="text-lg text-gray-500	">{q.Description}</p>
+                </div>
+                <div className="text-3xl">{q.Topic}</div>
+                <div className="">Difficulty : {q.Difficulty}</div>
+                <div className="text-lg text-gray-500	">{q.Description}</div>
                 <div className="flex items-center gap-4 my-6 cursor-pointer ">
-                  <a href={q.URL} target="_blank">
+                  <Link href={q.URL} target="_blank">
                     <button
                       type="button"
                       className="inline-block bg-red-300 rounded-full px-6 pb-[6px] pt-2 text-sm font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:border-primary-accent-100 hover:bg-neutral-500 hover:bg-opacity-10 focus:border-primary-accent-100  focus:ring-0 active:border-primary-accent-200 "
@@ -67,7 +67,7 @@ const Question = ({ ques1 }) => {
                     >
                       Go to Question
                     </button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

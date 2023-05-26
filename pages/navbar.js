@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { getAuth } from "firebase/auth";
 import { useState, useEffect } from "react";
+
 import { app } from "../firebase";
 import { handlesignout } from "../signout";
 import { useRouter } from "next/router";
 
-const Navbar = () => {
+const Navbar = ({ logged }) => {
   const router = useRouter();
   const signingout = async () => {
     await handlesignout();
@@ -15,9 +15,10 @@ const Navbar = () => {
 
     router.push("/");
   };
-
-  const [logged_in, setlogged_in] = useState(false);
   const auth = getAuth(app);
+  console.log("JELLOO");
+  console.log(auth.currentUser);
+  const [logged_in, setlogged_in] = useState(logged ? true : false);
 
   useEffect(() => {
     if (auth.currentUser) {
@@ -25,7 +26,6 @@ const Navbar = () => {
     }
   }, [auth.currentUser]);
 
-  const flex = "";
   return (
     <div className="shadow-sm h-20 text-red-200 bg-orange-200 flex justify-between items-center">
       <Link href="/">
@@ -35,25 +35,25 @@ const Navbar = () => {
       </Link>
       <div className="flex gap-10 ">
         <Link href="/">
-          <p className="font-semibold text-xl text-red-400 hover:text-red-800">
+          <div className="font-semibold text-xl text-red-400 hover:text-red-800">
             Home
-          </p>
+          </div>
         </Link>
         <Link href="/contest">
-          <p className="font-semibold text-xl text-red-400 hover:text-red-800 ">
+          <div className="font-semibold text-xl text-red-400 hover:text-red-800 ">
             Contests
-          </p>
+          </div>
         </Link>
         <Link href={"/about"}>
-          <p className="font-semibold text-xl text-red-400 hover:text-red-800">
+          <div className="font-semibold text-xl text-red-400 hover:text-red-800">
             About
-          </p>
+          </div>
         </Link>
         {logged_in ? (
           <Link href={`/progress/${auth.currentUser.uid}`}>
-            <p className="font-semibold text-xl text-red-400 hover:text-red-800">
+            <div className="font-semibold text-xl text-red-400 hover:text-red-800">
               Progress
-            </p>
+            </div>
           </Link>
         ) : (
           <></>
