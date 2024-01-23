@@ -3,6 +3,7 @@ import Link from "next/link";
 import { app } from "../firebase";
 import { getAuth } from "firebase/auth";
 import { useState, useEffect } from "react";
+import contests from "../utilities/cp_contest"
 import {
   doc,
   collection,
@@ -14,19 +15,9 @@ import {
 import { db } from "../firebase";
 import _, { get, map, result } from "underscore";
 
-export async function getServerSideProps() {
-  const res = await fetch("https://kontests.net/api/v1/all");
-  const contests = await res.json();
-  console.log(contests);
 
-  return {
-    props: {
-      contests,
-    },
-  };
-}
 
-const Contest = ({ contests }) => {
+const Contest = () => {
   const auth = getAuth(app);
   const [array1, setarray] = useState(["fy"]);
   useEffect(() => {
@@ -89,9 +80,6 @@ const Contest = ({ contests }) => {
       });
   };
 
-  contests = contests?.filter((q) => {
-    return q.name.length < 45;
-  });
   return (
     <div className="flex flex-wrap gap-10 px-10 justify-center">
       {contests?.map((contest) => (

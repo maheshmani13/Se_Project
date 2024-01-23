@@ -1,0 +1,72 @@
+[
+    {
+      "name": "Codeforces Round #753",
+      "platform": "Codeforces",
+      "url": "https://codeforces.com/contests/753",
+      "start_time": "2024-01-25 08:00 UTC",
+      "end_time": "2024-01-25 10:00 UTC"
+    },
+    {
+      "name": "AtCoder Beginner Contest 200",
+      "platform": "AtCoder",
+      "url": "https://atcoder.jp/contests/abc200",
+      "start_time": "2024-01-26 12:00 UTC",
+      "end_time": "2024-01-26 14:00 UTC"
+    },
+    {
+      "name": "LeetCode Weekly Contest 275",
+      "platform": "LeetCode",
+      "url": "https://leetcode.com/contest/weekly-contest-275",
+      "start_time": "2024-01-27 15:00 UTC",
+      "end_time": "2024-01-27 17:00 UTC"
+    },
+    {
+      "name": "HackerRank Week of Code 50",
+      "platform": "HackerRank",
+      "url": "https://www.hackerrank.com/contests/week-of-code-50",
+      "start_time": "2024-01-28 09:00 UTC",
+      "end_time": "2024-01-28 11:00 UTC"
+    },
+    {
+      "name": "CodeChef January Cook-Off 2023",
+      "platform": "CodeChef",
+      "url": "https://www.codechef.com/contests/cook2023",
+      "start_time": "2024-01-29 14:00 UTC",
+      "end_time": "2024-01-29 16:00 UTC"
+    },
+    {
+      "name": "Topcoder Open Round 2A",
+      "platform": "Topcoder",
+      "url": "https://www.topcoder.com/challenges",
+      "start_time": "2024-01-30 10:00 UTC",
+      "end_time": "2024-01-30 12:00 UTC"
+    },
+    {
+      "name": "Google Code Jam Qualification Round",
+      "platform": "Google Code Jam",
+      "url": "https://codingcompetitions.withgoogle.com/codejam",
+      "start_time": "2024-01-31 18:00 UTC",
+      "end_time": "2024-01-31 20:00 UTC"
+    },
+    {
+      "name": "Facebook Hacker Cup Round 1",
+      "platform": "Facebook Hacker Cup",
+      "url": "https://www.facebook.com/codingcompetitions/hacker-cup",
+      "start_time": "2024-02-01 13:00 UTC",
+      "end_time": "2024-02-01 15:00 UTC"
+    },
+    {
+      "name": "Spoj Monthly Challenge",
+      "platform": "Spoj",
+      "url": "https://www.spoj.com/",
+      "start_time": "2024-02-02 16:00 UTC",
+      "end_time": "2024-02-02 18:00 UTC"
+    },
+    {
+      "name": "Google Kick Start Round A",
+      "platform": "Google Kick Start",
+      "url": "https://codingcompetitions.withgoogle.com/kickstart",
+      "start_time": "2024-02-03 11:00 UTC",
+      "end_time": "2024-02-03 13:00 UTC"
+    }
+  ]
